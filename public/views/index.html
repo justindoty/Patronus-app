@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="patronusApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Patronus Assigner</title>
+    <script src="vendors/angular/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/patronusApp.module.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <script src="scripts/DataService.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/styles.css" title="no title" charset="utf-8">
+  </head>
+  <body ng-controller="PatronusController">
+    <h1>Patronusisises Here!</h1>
+    <div class="display-input">
+
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" ng-model="name">
+      <button ng-click="addName(name); test()">submit</button>
+    </div>
+    <div class="display-input">
+      <label for="patronus">Patronus:</label>
+      <input type="text" id="patronus" ng-model="patronus">
+      <button ng-click="addPatronus(patronus)">submit</button>
+    </div>
+
+    <div class="display">
+      <h3>People</h3>
+      <ul>
+        <li ng-repeat="person in data.people track by $index">{{data.people[$index].first_name}} {{data.people[$index].last_name}}</li>
+        <li ng-show="name.length > 0">
+          {{name}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="display">
+      <h3>Patronuses</h3>
+      <ul>
+        <li ng-repeat="patronus in data.patronuses track by $index">{{data.patronuses[$index].patronus_name}}</li>
+        <li ng-show="patronus.length > 0">
+          {{patronus}}
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

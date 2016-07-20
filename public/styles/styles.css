@@ -1,0 +1,13 @@
+.display, .display-input {
+  width: 40%;
+  float: left;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+li {
+  font-size: 16px;
+  font-weight: bold;
+}
