@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="patronusApp">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Patronus Assigner</title>
     <script src="vendors/angular/angular.min.js" charset="utf-8"></script>
@@ -9,42 +8,62 @@
     <script src="scripts/client.js" charset="utf-8"></script>
     <script src="scripts/DataService.js" charset="utf-8"></script>
     <link rel="stylesheet" href="styles/styles.css" title="no title" charset="utf-8">
-</head>
+  </head>
+  <body ng-controller="PatronusController">
+    <div class="main">
+    <h1>Patroni-suses Here!</h1>
+    <div class="container">
 
-<body ng-controller="PatronusController">
-    <h1>Patronusisises Here!</h1>
-    <div class="display-input">
 
+      <div class="display">
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" ng-model="name">
-        <button ng-click="addName(name); test()">submit</button>
-    </div>
-    <div class="display-input">
-        <label for="patronus">Patronus:</label>
-        <input type="text" id="patronus" ng-model="patronus">
-        <button ng-click="addPatronus(patronus)">submit</button>
-    </div>
-
-    <div class="display">
-        <h3>People</h3>
         <ul>
-            <li ng-repeat="person in data.people track by $index">{{data.people[$index].first_name}} {{data.people[$index].last_name}}</li>
-            <li ng-show="name.length > 0">
-                {{name}}
-            </li>
+          <h2>People</h2>
+          <li ng-repeat="person in data.people track by $index">{{data.people[$index].first_name}} {{data.people[$index].last_name}}</li>
+          <li ng-if="nameAdd">
+            <input type="text" id="name" ng-model="name" placeholder="Add Name">
+            <button ng-click="addName(name); test()" ng-if="name.length > 0">submit</button>
+          </li>
+          <button class="add-data" ng-click="toggleName()" ng-if="!nameAdd">Add Name</button>
         </ul>
-    </div>
+      </div>
 
-    <div class="display">
-        <h3>Patronuses</h3>
+      <div class="display">
+
         <ul>
-            <li ng-repeat="patronus in data.patronuses track by $index">{{data.patronuses[$index].patronus_name}}</li>
-            <li ng-show="patronus.length > 0">
-                {{patronus}}
-            </li>
+          <h2>Patronuses</h2>
+          <li ng-repeat="patronus in data.patronuses track by $index">{{data.patronuses[$index].patronus_name}}</li>
+          <li ng-if="patronusAdd">
+            <!-- <label for="patronus">Patronus:</label> -->
+            <input type="text" id="patronus" ng-model="patronus" placeholder="Add Patronus">
+            <button ng-click="addPatronus(patronus); test()" ng-if="patronus.length > 0">submit</button>
+          </li>
+          <button class="add-data" ng-click="togglePatronus()" ng-if="!patronusAdd">Add Patronus</button>
         </ul>
+      </div>
+    <div class="clear">&nbsp</div>
     </div>
-</body>
-
+    </div>
+    <div class="footer">
+      <div class="wand-container" style="width: 100%; display: flex; margin: 0px 0">
+        <div class="wand" style="margin: 0; padding: 0; box-sizing: border-box; flex: 0 auto">
+		    	<img class="wand-img" src="https://az480170.vo.msecnd.net/debd7172-44dc-4681-b074-d940a93cc4e1/img/prd/ebd45891-96bd-4aed-810e-65cc2c672309/l_harrywand_prph_hpe3.png" alt="" style="margin: 0; padding: 0; box-sizing: border-box; width: 150px">
+	    	</div>
+        <div class="lightning-bolt" style="margin: 0; padding: 0; box-sizing: border-box; flex: 1 auto; position: relative; top: -12px">
+          <marquee scrollamount="70" direction="right">
+            <img class="bolt-img" src="http://www.dundjinni.com/forums/uploads/benwax/Lightning_Bolt_2_DGD_bw.png" alt="" style="margin: 0; padding: 0; box-sizing: border-box; height: 20px">
+            <div class="spacer" style="display: inline-block; width: 200px"></div>
+            <img class="bolt-img" src="http://www.dundjinni.com/forums/uploads/benwax/Lightning_Bolt_2_DGD_bw.png" alt="" style="margin: 0; padding: 0; box-sizing: border-box; height: 20px">
+            <div class="spacer" style="display: inline-block; width: 200px"></div>
+            <img class="bolt-img" src="http://www.dundjinni.com/forums/uploads/benwax/Lightning_Bolt_2_DGD_bw.png" alt="" style="margin: 0; padding: 0; box-sizing: border-box; height: 20px">
+            <div class="spacer" style="display: inline-block; width: 200px"></div>
+            <img class="bolt-img" src="http://www.dundjinni.com/forums/uploads/benwax/Lightning_Bolt_2_DGD_bw.png" alt="" style="margin: 0; padding: 0; box-sizing: border-box; height: 20px">
+            <div class="spacer" style="display: inline-block; width: 200px"></div>
+            <img class="bolt-img" src="http://www.dundjinni.com/forums/uploads/benwax/Lightning_Bolt_2_DGD_bw.png" alt="" style="margin: 0; padding: 0; box-sizing: border-box; height: 20px">
+          </marquee>
+        </div>
+      </div>
+      Created By: Donovan Goertzen, Justin Doty, and Connor O'Gara
+    </div>
+  </body>
 </html>

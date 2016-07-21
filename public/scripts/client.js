@@ -6,6 +6,26 @@ angular.module('patronusApp').controller('PatronusController', function($scope, 
   $scope.addName = DataService.addName;
   $scope.test = test;
   $scope.refresh = refresh;
+  $scope.patronusAdd = false;
+  $scope.nameAdd = false;
+  $scope.togglePatronus = togglePatronus;
+  $scope.toggleName = toggleName;
+
+  function togglePatronus() {
+    if ($scope.patronusAdd) {
+      $scope.patronusAdd = false;
+    } else {
+      $scope.patronusAdd = true;
+    }
+  }
+
+  function toggleName() {
+    if ($scope.nameAdd) {
+      $scope.nameAdd = false;
+    } else {
+      $scope.nameAdd = true;
+    }
+  }
 
   function refresh(){
     // $scope.getPatronus();
@@ -14,5 +34,8 @@ angular.module('patronusApp').controller('PatronusController', function($scope, 
   }
   function test (){
     $scope.name = '';
+    $scope.patronus = '';
+    $scope.patronusAdd = false;
+    $scope.nameAdd = false;
   }
 });

@@ -1,7 +1,6 @@
 {
   "name": "patronus-assigner",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,5 +13,14 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "pg": "^6.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justindoty/Patronus-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justindoty/Patronus-app/issues"
+  },
+  "homepage": "https://github.com/justindoty/Patronus-app#readme",
+  "description": ""
 }
